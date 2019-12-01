@@ -25,7 +25,7 @@
         statement = document.getElementById("cmd").value;
         newElement = document.createElement('div');
         document.getElementById("console").appendChild(newElement);
-        newElement.setAttribute('color', "lightgray");
+        newElement.setAttribute('color', "gray");
         newElement.innerHTML = "> | " + statement;
         newElement = document.createElement('div');
         document.getElementById("console").appendChild(newElement);
@@ -35,7 +35,7 @@
       }
       function correct(){
         result = eval(statement);
-        newElement.setAttribute('style', "color: lightgray");
+        newElement.setAttribute('style', "color: gray");
         newElement.innerHTML = "< | " + result;
         document.getElementById("cmd").value = "";
       }
