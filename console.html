@@ -6,9 +6,12 @@
     </title>
   </head>
   <body>
+    <h1>JS Console</h1>
+    <hr>
     <div id="console">
     </div>
-    <input type="text" id="cmd">
+    <hr>
+    &gt;<input type="text" id="cmd">
     <script>
     var newElement;
     var statement;
@@ -24,11 +27,12 @@
         newElement = document.createElement('div');
         document.getElementById("console").appendChild(newElement);
         newElement.setAttribute('color', "lightgray");
-        newElement.innerHTML = "> | " + cmd;
+        newElement.innerHTML = "> | " + statement;
         newElement = document.createElement('div');
         document.getElementById("console").appendChild(newElement);
         newElement.setAttribute('color', "lightgray");
         newElement.innerHTML = "< | " + result;
+        document.getElementById("cmd").value = "";
       }
     </script>
   </body>
