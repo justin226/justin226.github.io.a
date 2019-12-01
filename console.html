@@ -22,6 +22,7 @@
         }
       });
       function evaluateFunction(){
+        statement = document.getElementById("cmd").value;
         newElement = document.createElement('div');
         document.getElementById("console").appendChild(newElement);
         newElement.setAttribute('color', "lightgray");
