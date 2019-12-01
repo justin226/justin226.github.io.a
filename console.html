@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      JS CONSOLE
+    </title>
+  </head>
+  <body>
+    <div id="console">
+    </div>
+    <input type="text" id="cmd">
+    <script>
+    var newElement;
+    var statement;
+    var result;
+      document.body.addEventListener('keyup', function(e){
+        if( e.keyCode == 13){
+          evaluateFunction();
+        }
+      });
+      function evaluateFunction(){
+        statement = document.getElementById("cmd").value;
+        result = eval(statement);
+        newElement = document.createElement('div');
+        document.getElementById("console").appendChild(newElement);
+        newElement.setAttribute('color', "lightgray");
+        newElement.innerHTML = "> | " + cmd;
+        newElement = document.createElement('div');
+        document.getElementById("console").appendChild(newElement);
+        newElement.setAttribute('color', "lightgray");
+        newElement.innerHTML = "< | " + result;
+      }
+    </script>
+  </body>
+</html>
