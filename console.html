@@ -29,13 +29,13 @@
         newElement.innerHTML = "> | " + statement;
         newElement = document.createElement('div');
         document.getElementById("console").appendChild(newElement);
-        newElement.setAttribute('color', "red");
+        newElement.setAttribute('style', "color: red");
         newElement.innerHTML = "< | SyntaxError";
         correct();
       }
       function correct(){
         result = eval(statement);
-        newElement.setAttribute('color', "lightgray");
+        newElement.setAttribute('style', "color: lightgray");
         newElement.innerHTML = "< | " + result;
         document.getElementById("cmd").value = "";
       }
