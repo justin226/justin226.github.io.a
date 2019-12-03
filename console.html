@@ -16,6 +16,13 @@
     function clearConsole(){
       document.getElementById("console").innerHTML = "";
     }
+    function consoleLog(){
+      result = statement.slice(12)
+      var finalResult = result.replace(");", "");
+      newElement.setAttribute('style', "color: gray");
+      newElement.innerHTML = "< | " + finalResult;
+      document.getElementById("cmd").value = "";
+    }
     var newElement;
     var statement;
     var result;
@@ -26,16 +33,30 @@
       });
       function evaluateFunction(){
         statement = document.getElementById("cmd").value;
-        newElement = document.createElement('div');
-        document.getElementById("console").appendChild(newElement);
-        newElement.setAttribute('color', "gray");
-        newElement.innerHTML = "> | " + statement;
-        newElement = document.createElement('div');
-        document.getElementById("console").appendChild(newElement);
-        newElement.setAttribute('style', "color: red");
-        newElement.innerHTML = "< | SyntaxError";
-        document.getElementById("cmd").value = "";
-        correct();
+        if("console.log(" == statement.slice(0, 11) && statement.endsWith(");")){
+          newElement = document.createElement('div');
+          document.getElementById("console").appendChild(newElement);
+          newElement.setAttribute('color', "gray");
+          newElement.innerHTML = "> | " + statement;
+          newElement = document.createElement('div');
+          document.getElementById("console").appendChild(newElement);
+          newElement.setAttribute('style', "color: red");
+          newElement.innerHTML = "< | SyntaxError";
+          document.getElementById("cmd").value = "";
+          consoleLog();
+        } else{
+          newElement = document.createElement('div');
+          document.getElementById("console").appendChild(newElement);
+          newElement.setAttribute('color', "gray");
+          newElement.innerHTML = "> | " + statement;
+          newElement = document.createElement('div');
+          document.getElementById("console").appendChild(newElement);
+          newElement.setAttribute('style', "color: red");
+          newElement.innerHTML = "< | SyntaxError";
+          document.getElementById("cmd").value = "";
+          correct();
+        }
+        
       }
       function correct(){
         result = eval(statement);
