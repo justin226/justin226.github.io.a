@@ -6,7 +6,7 @@
     </title>
   </head>
   <body>
-    <h1>JS Console</h1>
+    <div id="errors" style="color: red"></div>
     <hr>
     <div id="console">
     </div>
@@ -19,6 +19,7 @@
     var newElement;
     var statement;
     var result;
+      var errors = 0;
       document.body.addEventListener('keyup', function(e){
         if( e.keyCode == 13){
           if(document.getElementById("cmd").value !== "")
@@ -46,6 +47,8 @@
         newElement.setAttribute('style', "color: red; background-color: #ffefef");
         newElement.innerHTML = "✖ " + result;
         document.getElementById("cmd").value = "";
+          errors++;
+          document.getElementById("errors").innerHTML = "×: " + errors;
         }
         
       }
