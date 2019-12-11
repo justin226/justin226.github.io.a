@@ -33,37 +33,29 @@
       });
       function evaluateFunction(){
         statement = document.getElementById("cmd").value;
-        if("console.log(" == statement.slice(0, 11) && statement.endsWith(");")){
-          newElement = document.createElement('div');
-          document.getElementById("console").appendChild(newElement);
-          newElement.setAttribute('color', "gray");
-          newElement.innerHTML = "> | " + statement;
-          newElement = document.createElement('div');
-          document.getElementById("console").appendChild(newElement);
-          newElement.setAttribute('style', "color: red");
-          newElement.innerHTML = "< | SyntaxError";
-          document.getElementById("cmd").value = "";
-          consoleLog();
-        } else{
-          newElement = document.createElement('div');
-          document.getElementById("console").appendChild(newElement);
-          newElement.setAttribute('color', "gray");
-          newElement.innerHTML = "> | " + statement;
-          newElement = document.createElement('div');
-          document.getElementById("console").appendChild(newElement);
-          newElement.setAttribute('style', "color: red");
-          newElement.innerHTML = "< | SyntaxError";
-          document.getElementById("cmd").value = "";
-          correct();
-        }
         
-      }
-      function correct(){
-        result = eval(statement);
+          newElement = document.createElement('div');
+          document.getElementById("console").appendChild(newElement);
+          newElement.setAttribute('color', "gray");
+          newElement.innerHTML = "> | " + statement;
+          newElement = document.createElement('div');
+          document.getElementById("console").appendChild(newElement);
+          document.getElementById("cmd").value = "";
+        try{
+          result = eval(statement);
         newElement.setAttribute('style', "color: gray");
         newElement.innerHTML = "< | " + result;
         document.getElementById("cmd").value = "";
+        }
+        catch(err){
+          result = err.name + "<br>" + err.message;
+        newElement.setAttribute('style', "color: red");
+        newElement.innerHTML = "< | " + result;
+        document.getElementById("cmd").value = "";
+        }
+        
       }
+      
     </script>
   </body>
 </html>
