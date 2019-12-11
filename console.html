@@ -10,18 +10,11 @@
     <hr>
     <div id="console">
     </div>
-    <hr>
-    &gt;&nbsp;|&nbsp;<input type="text" id="cmd" width="device.width">
+    <hr><span style="color: #367cf1">
+    &gt;&nbsp;|</span><input type="text" id="cmd" width="device.width">
     <script>
     function clearConsole(){
       document.getElementById("console").innerHTML = "";
-    }
-    function consoleLog(){
-      result = statement.slice(12)
-      var finalResult = result.replace(");", "");
-      newElement.setAttribute('style', "color: gray");
-      newElement.innerHTML = "< | " + finalResult;
-      document.getElementById("cmd").value = "";
     }
     var newElement;
     var statement;
