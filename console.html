@@ -21,8 +21,9 @@
     var result;
       document.body.addEventListener('keyup', function(e){
         if( e.keyCode == 13){
-          evaluateFunction();
-        }
+          if(document.getElementById("cmd").value !== "")
+            evaluateFunction();
+          }
       });
       function evaluateFunction(){
         statement = document.getElementById("cmd").value;
