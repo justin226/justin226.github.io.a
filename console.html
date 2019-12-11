@@ -48,7 +48,7 @@
         document.getElementById("cmd").value = "";
         }
         catch(err){
-          result = err.name + ": " + err.message;
+          result = "Uncaught " + err.name + ": " + err.message;
         newElement.setAttribute('style', "color: red");
         newElement.innerHTML = "< | " + result;
         document.getElementById("cmd").value = "";
