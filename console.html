@@ -46,7 +46,7 @@
         catch(err){
           result = "Uncaught " + err.name + ": " + err.message;
         newElement.setAttribute('style', "color: red; background-color: #ffefef");
-        newElement.innerHTML = "✖ " + result;
+        newElement.innerHTML = "✖| " + result;
         document.getElementById("cmd").value = "";
           errors++;
           document.getElementById("errors").innerHTML = "×: " + errors;
