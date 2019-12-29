@@ -17,6 +17,9 @@
       document.getElementById("console").innerHTML = "";
       document.getElementById("errors").innerHTML = "";
     }
+    var console = {
+      log: function(con){try{return eval(con)} catch(err){return err}}
+    }
     var newElement;
     var statement;
     var result;
