@@ -24,7 +24,7 @@
       var console = {
         log: function(con) {
           try {
-            return eval("\"" + con + "\"")
+            return "\"" + eval("\"" + con + "\"") + "\""
           } catch (err) {
             consolelog = false;
             return "Uncaught " + err
