@@ -34,6 +34,10 @@
             consolelog = false;
             return "Uncaught " + err
           }
+        },
+        clear = function(){
+          document.getElementById("console").innerHTML = "";
+          document.getElementById("errors").innerHTML = "";
         }
       }
       var newElement;
