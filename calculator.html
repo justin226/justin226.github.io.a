@@ -94,13 +94,11 @@
 	
 var a;
 var b;
-	var one;
-	var two;
-
-
+var one;
+var two;
 document.getElementById("go").addEventListener("click", function(){
 a = document.getElementById("input").value;
-	for(var count = 0; count < a.length; count++){
+	for(var count = 0; count > a.length; count++){
 a.replace("×", "*");
 a.replace("÷", "/");
 	}
