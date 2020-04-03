@@ -20,7 +20,7 @@
 <body>
 
 </div>
-	<div id="game" style="display: none;">
+	<div id="game">
 <input type="text" id="input" style="width: 408px; height: 50px">
 <br>
 <button id="x" style="width: 100px">
@@ -91,62 +91,13 @@
 	<br><br><br><br><br>
 	<a href="https://justin226.github.io/games">Return to Main Page</a>
 <script>
-	document.getElementById("game").style.display = "block";
-    document.getElementById("lock").style.display = "none";
-    document.cookie = "locked=false";
-    document.getElementById("password").value = "";
-    document.getElementById("unlockable").innerHTML = "";
+	
 var a;
 var b;
 	var one;
 	var two;
-checkLock();
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-	document.getElementById("exit").addEventListener("click", function(){
-  document.cookie = "locked=true";
-  checkLock();
-});
-function checkLock(){
-  c = getCookie("locked");
-  if(c !== "false"){
-     document.getElementById("game").style.display = "none";
-     document.getElementById("lock").style.display = "block";
-	  document.getElementById("exit").style.display = "none";
-  }
-  else{
-    document.getElementById("lock").style.display = "none";
-    document.getElementById("game").style.display = "block";
-	  document.getElementById("exit").style.display = "block";
-	  document.getElementById("password").value = "";
-    document.getElementById("unlockable").innerHTML = "";
-  }
-}
-document.getElementById("unlock").addEventListener("click", function(){
-  if(document.getElementById("password").value === "password01"){
-    document.getElementById("game").style.display = "block";
-    document.getElementById("lock").style.display = "none";
-    document.cookie = "locked=false";
-    document.getElementById("password").value = "";
-    document.getElementById("unlockable").innerHTML = "";
-  }
-  else{
-    document.getElementById("unlockable").innerHTML = "Wrong";
-  }
-});
+
+
 document.getElementById("go").addEventListener("click", function(){
 a = document.getElementById("input").value;
 	for(var count = 0; count < a.length; count++){
