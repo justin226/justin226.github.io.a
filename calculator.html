@@ -92,15 +92,16 @@
 	<a href="https://justin226.github.io/games">Return to Main Page</a>
 <script>
 	
-var a;
+
 var b;
 var one;
 var two;
 document.getElementById("go").addEventListener("click", function(){
+	var a;
 a = document.getElementById("input").value;
-	for(var count = 0; count > a.length; count++){
-a.replace("×", "*");
-a.replace("÷", "/");
+	for(var count = 0; count < a.length; count++){
+a = a.replace("×", "*");
+a = a.replace("÷", "/");
 	}
 var answer = eval(a);
 	if(answer == "NaN"){answer = "Error"}
